@@ -14,6 +14,6 @@
 
 
 {% macro presto__hash(field) -%}
-    to_hex(md5(cast(to_utf8({{field}})) as {{dbt_utils.type_string()}}))
+    to_hex(md5(to_utf8({{field}})))
 {%- endmacro %}
 
