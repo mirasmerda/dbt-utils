@@ -11,3 +11,9 @@
 {% macro bigquery__hash(field) -%}
     to_hex({{dbt_utils.default__hash(field)}})
 {%- endmacro %}
+
+
+{% macro presto__hash(field) -%}
+    to_hex(md5(cast(to_utf8({{field}})) as {{dbt_utils.type_string()}}))
+{%- endmacro %}
+

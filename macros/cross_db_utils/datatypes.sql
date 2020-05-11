@@ -20,6 +20,9 @@
     varchar
 {% endmacro %}
 
+{% macro presto__type_string() %}
+    varchar
+{% endmacro %}
 
 
 {# timestamp  -------------------------------------------------     #}
